@@ -294,6 +294,11 @@ func (c *Conn) UnlockSession(id string) {
 	c.object.Call(dbusInterface+".UnlockSession", 0, id)
 }
 
+// ActivateSession activates the session with the specified ID.
+func (c *Conn) ActivateSession(id string) {
+	c.object.Call(dbusInterface+".ActivateSession", 0, id)
+}
+
 // LockSessions asks all sessions to activate the screen locks. This may be used to lock any access to the machine in one action.
 func (c *Conn) LockSessions() {
 	c.object.Call(dbusInterface+".LockSessions", 0)
